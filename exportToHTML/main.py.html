@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">#imported turtle module</span>
+
+<span class="s2">import </span><span class="s1">turtle</span>
+
+<span class="s1">wind = turtle.Screen()</span>
+<span class="s1">wind.title(</span><span class="s3">&quot;Ping pong By Adel&quot;</span><span class="s1">)</span>
+<span class="s1">wind.bgcolor(</span><span class="s3">&quot;black&quot;</span><span class="s1">)</span>
+<span class="s1">wind.setup(width=</span><span class="s4">800</span><span class="s2">,</span><span class="s1">height=</span><span class="s4">600</span><span class="s1">)</span>
+<span class="s1">wind.tracer(</span><span class="s4">0</span><span class="s1">) </span><span class="s0">#يمنع التحديث في الشاشة</span>
+
+<span class="s0">#madrab1</span>
+<span class="s1">madrab1 =turtle.Turtle()</span>
+<span class="s1">madrab1.speed(</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">madrab1.shape(</span><span class="s3">&quot;square&quot;</span><span class="s1">)</span>
+<span class="s1">madrab1.color(</span><span class="s3">&quot;blue&quot;</span><span class="s1">)</span>
+<span class="s1">madrab1.shapesize(stretch_wid=</span><span class="s4">5</span><span class="s2">,</span><span class="s1">stretch_len=</span><span class="s4">1</span><span class="s1">)</span>
+<span class="s1">madrab1.penup()</span>
+<span class="s1">madrab1.goto(-</span><span class="s4">350</span><span class="s2">,</span><span class="s4">0</span><span class="s1">)</span>
+
+<span class="s0">#madrab2</span>
+<span class="s1">madrab2 =turtle.Turtle()</span>
+<span class="s1">madrab2.speed(</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">madrab2.shape(</span><span class="s3">&quot;square&quot;</span><span class="s1">)</span>
+<span class="s1">madrab2.color(</span><span class="s3">&quot;red&quot;</span><span class="s1">)</span>
+<span class="s1">madrab2.shapesize(stretch_wid=</span><span class="s4">5</span><span class="s2">,</span><span class="s1">stretch_len=</span><span class="s4">1</span><span class="s1">)</span>
+<span class="s1">madrab2.penup()</span>
+<span class="s1">madrab2.goto(</span><span class="s4">350</span><span class="s2">,</span><span class="s4">0</span><span class="s1">)</span>
+
+<span class="s0">#ball</span>
+<span class="s1">ball =turtle.Turtle()</span>
+<span class="s1">ball.speed(</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">ball.shape(</span><span class="s3">&quot;square&quot;</span><span class="s1">)</span>
+<span class="s1">ball.color(</span><span class="s3">&quot;yellow&quot;</span><span class="s1">)</span>
+<span class="s1">ball.penup()</span>
+<span class="s1">ball.goto(</span><span class="s4">0</span><span class="s2">,</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">ball.dx= </span><span class="s4">1.5</span>
+<span class="s1">ball.dy= </span><span class="s4">1.5</span>
+
+<span class="s0">#score</span>
+<span class="s1">score1 = </span><span class="s4">0</span>
+<span class="s1">score2 = </span><span class="s4">0</span>
+<span class="s1">score= turtle.Turtle()</span>
+<span class="s1">score.speed(</span><span class="s4">0</span><span class="s1">)</span>
+<span class="s1">score.color(</span><span class="s3">&quot;white&quot;</span><span class="s1">)</span>
+<span class="s1">score.penup()</span>
+<span class="s1">score.hideturtle()</span>
+<span class="s1">score.goto(</span><span class="s4">0 </span><span class="s2">, </span><span class="s4">260</span><span class="s1">)</span>
+<span class="s1">score.write(</span><span class="s3">&quot;Player 1 : 0 Player 2 : 0&quot; </span><span class="s2">, </span><span class="s1">align=</span><span class="s3">&quot;center&quot;</span><span class="s2">, </span><span class="s1">font=(</span><span class="s3">&quot;Courier &quot;</span><span class="s2">,</span><span class="s4">24 </span><span class="s2">, </span><span class="s3">&quot;normal &quot;</span><span class="s1">))</span>
+
+
+<span class="s0">#functions</span>
+
+<span class="s2">def </span><span class="s1">madrab1_up():</span>
+    <span class="s1">y = madrab1.ycor()</span>
+    <span class="s1">y += </span><span class="s4">20</span>
+    <span class="s1">madrab1.sety(y)</span>
+<span class="s2">def </span><span class="s1">madrab1_down():</span>
+    <span class="s1">y = madrab1.ycor()</span>
+    <span class="s1">y -= </span><span class="s4">20</span>
+    <span class="s1">madrab1.sety(y)</span>
+
+<span class="s2">def </span><span class="s1">madrab2_up():</span>
+    <span class="s1">y = madrab2.ycor()</span>
+    <span class="s1">y += </span><span class="s4">20</span>
+    <span class="s1">madrab2.sety(y)</span>
+<span class="s2">def </span><span class="s1">madrab2_down():</span>
+    <span class="s1">y = madrab2.ycor()</span>
+    <span class="s1">y -= </span><span class="s4">20</span>
+    <span class="s1">madrab2.sety(y)</span>
+<span class="s0">#اعدادات الكيبورد و التحكم فاللعبة</span>
+<span class="s1">wind.listen()</span>
+<span class="s1">wind.onkeypress(madrab1_up</span><span class="s2">,</span><span class="s3">&quot;w&quot;</span><span class="s1">)</span>
+<span class="s1">wind.onkeypress(madrab1_down</span><span class="s2">,</span><span class="s3">&quot;s&quot;</span><span class="s1">)</span>
+<span class="s1">wind.onkeypress(madrab2_up</span><span class="s2">,</span><span class="s3">&quot;Up&quot;</span><span class="s1">)</span>
+<span class="s1">wind.onkeypress(madrab2_down</span><span class="s2">,</span><span class="s3">&quot;Down&quot;</span><span class="s1">)</span>
+
+<span class="s0">#main Game loop</span>
+<span class="s2">while True</span><span class="s1">:</span>
+    <span class="s1">wind.update()</span>
+
+    <span class="s0"># move the ball</span>
+    <span class="s1">ball.setx(ball.xcor()+ball.dx)</span>
+    <span class="s1">ball.sety(ball.ycor()+ball.dy)</span>
+
+    <span class="s0"># border check حدود الكوره و تحركات الكوره على محور Y and X</span>
+    <span class="s2">if </span><span class="s1">ball.ycor()&gt;</span><span class="s4">290</span><span class="s1">:</span>
+        <span class="s1">ball.sety(</span><span class="s4">290</span><span class="s1">)</span>
+        <span class="s1">ball.dy *= -</span><span class="s4">1</span>
+
+    <span class="s2">if </span><span class="s1">ball.ycor()&lt;-</span><span class="s4">290</span><span class="s1">:</span>
+        <span class="s1">ball.sety(-</span><span class="s4">290</span><span class="s1">)</span>
+        <span class="s1">ball.dy *= -</span><span class="s4">1</span>
+
+    <span class="s2">if </span><span class="s1">ball.xcor()&gt;</span><span class="s4">390</span><span class="s1">:</span>
+        <span class="s1">ball.goto(</span><span class="s4">0</span><span class="s2">,</span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">ball.dx *= -</span><span class="s4">1</span>
+        <span class="s1">score1 +=</span><span class="s4">1</span>
+        <span class="s1">score.clear()</span>
+        <span class="s1">score.write(</span><span class="s3">&quot;Player 1 : {} Player 2 : {} &quot;</span><span class="s1">.format(score1</span><span class="s2">,</span><span class="s1">score2)</span><span class="s2">, </span><span class="s1">align=</span><span class="s3">&quot;center&quot;</span><span class="s2">, </span><span class="s1">font=(</span><span class="s3">&quot;Courier &quot;</span><span class="s2">, </span><span class="s4">24</span><span class="s2">, </span><span class="s3">&quot;normal &quot;</span><span class="s1">))</span>
+
+    <span class="s2">if </span><span class="s1">ball.xcor()&lt;-</span><span class="s4">390</span><span class="s1">:</span>
+        <span class="s1">ball.goto(</span><span class="s4">0</span><span class="s2">,</span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">ball.dx *= -</span><span class="s4">1</span>
+        <span class="s1">score2 +=</span><span class="s4">1</span>
+        <span class="s1">score.clear()</span>
+        <span class="s1">score.write(</span><span class="s3">&quot;Player 1 : {} Player 2 : {} &quot;</span><span class="s1">.format(score1</span><span class="s2">, </span><span class="s1">score2)</span><span class="s2">, </span><span class="s1">align=</span><span class="s3">&quot;center&quot;</span><span class="s2">,</span><span class="s1">font=(</span><span class="s3">&quot;Courier &quot;</span><span class="s2">, </span><span class="s4">24</span><span class="s2">, </span><span class="s3">&quot;normal &quot;</span><span class="s1">))</span>
+    <span class="s0">#صدم الكروره فالمضارب</span>
+    <span class="s2">if </span><span class="s1">(ball.xcor()&gt;</span><span class="s4">340 </span><span class="s2">and </span><span class="s1">ball.xcor()&lt;</span><span class="s4">350</span><span class="s1">) </span><span class="s2">and </span><span class="s1">(ball.ycor()&lt; madrab2.ycor()+ </span><span class="s4">40 </span><span class="s2">and </span><span class="s1">ball.ycor()&gt; madrab2.ycor() - </span><span class="s4">40</span><span class="s1">):</span>
+        <span class="s1">ball.setx(</span><span class="s4">340</span><span class="s1">)</span>
+        <span class="s1">ball.dx *= -</span><span class="s4">1</span>
+
+
+    <span class="s2">if </span><span class="s1">(ball.xcor() &lt;- </span><span class="s4">340 </span><span class="s2">and </span><span class="s1">ball.xcor() &gt; - </span><span class="s4">350</span><span class="s1">) </span><span class="s2">and </span><span class="s1">(ball.ycor() &lt; madrab1.ycor() + </span><span class="s4">40 </span><span class="s2">and </span><span class="s1">ball.ycor() &gt; madrab1.ycor() - </span><span class="s4">40</span><span class="s1">):</span>
+        <span class="s1">ball.setx(-</span><span class="s4">340</span><span class="s1">)</span>
+        <span class="s1">ball.dx *= -</span><span class="s4">1</span>
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>
